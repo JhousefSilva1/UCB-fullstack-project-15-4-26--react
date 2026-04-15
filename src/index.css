@@ -1,0 +1,159 @@
+/* ========== GLOBAL ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  min-height: 100vh;
+  color: white;
+}
+
+/* ========== APP LAYOUT ========== */
+.app-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 30px;
+}
+
+/* ========== HEADER ========== */
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.task-subtitle {
+  color: #cbd5e1;
+}
+
+/* ========== TASK FORM ========== */
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+}
+
+.add-task-btn {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========== TASK LIST ========== */
+.task-list {
+  list-style: none;
+}
+
+.task-card {
+  background: white;
+  color: #0f172a;
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card.completed {
+  background: #d1fae5;
+}
+
+.task-card.completed .task-text {
+  text-decoration: line-through;
+  color: #475569;
+}
+
+/* ========== BUTTONS ========== */
+.edit-btn {
+  background: orange;
+  color: white;
+}
+
+.save-btn {
+  background: green;
+  color: white;
+}
+
+.complete-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+}
+
+/* ========== EMPTY STATE ========== */
+.empty-state {
+  text-align: center;
+  margin-top: 26px;
+  color: #cbd5e1;
+}
+
+/* ========== ALERT ========== */
+.custom-alert {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.custom-alert.success {
+  background: rgba(34, 197, 94, 0.18);
+}
+
+.custom-alert.error {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+.custom-alert.info {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+/* ========== MODAL ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  color: #0f172a;
+  border-radius: 18px;
+  padding: 24px;
+}

@@ -1,0 +1,131 @@
+/* ========== GLOBAL ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+  background-size: cover;
+  color: white;
+  padding: 40px 20px;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+/* ========== HEADER ========== */
+h1 {
+  text-align: center;
+}
+
+.task-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+/* ========== FORM ========== */
+.task-form {
+  display: flex;
+  gap: 10px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#addTaskBtn {
+  background: blue;
+  color: white;
+}
+
+/* ========== TASK LIST ========== */
+li {
+  background: white;
+  color: black;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn {
+  background: orange;
+}
+
+.save-btn {
+  background: green;
+  color: white;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+}
+
+/* ========== ALERT ========== */
+.custom-alert {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.error-alert {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* ========== EMPTY ========== */
+.empty-state {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ========== MODAL ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
