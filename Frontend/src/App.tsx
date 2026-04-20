@@ -183,19 +183,15 @@ function App() {
   const askDeleteTask = (id: number) => {
     setTaskToDelete(id);
   };
-
   const confirmDeleteTask = async () => {
     if (taskToDelete === null) return;
-
     try {
       const response = await fetch(`${API_URL}/${taskToDelete}`, {
         method: "DELETE",
       });
-
       if (!response.ok) {
         throw new Error("Failed to delete task");
       }
-
       setTasks((prev) => prev.filter((task) => task.id !== taskToDelete));
       setDeletedCount((prev) => prev + 1);
       setTaskToDelete(null);
@@ -205,7 +201,6 @@ function App() {
       showAlert("No se pudo eliminar la tarea.", "error");
     }
   };
-
   const cancelDeleteTask = () => {
     setTaskToDelete(null);
     showAlert("Eliminación cancelada.", "info");

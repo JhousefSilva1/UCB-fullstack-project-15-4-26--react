@@ -5,26 +5,20 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
-
 const SECRET_KEY = process.env.JWT_SECRET || "mi_clave_secreta";
-
 const app = express();
 const PORT = 3000;
-
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL!,
 });
 
 const prisma = new PrismaClient({ adapter });
-
 app.use(
   cors({
     origin: "http://localhost:5173",
   })
 );
-
 app.use(express.json());
-
 app.post("/login", (req: Request, res: Response) => {
   const { username, password } = req.body;
 
@@ -34,18 +28,15 @@ app.post("/login", (req: Request, res: Response) => {
       SECRET_KEY,
       { expiresIn: "1h" }
     );
-
     return res.json({
       message: "Login successful",
       token,
     });
   }
-
   return res.status(401).json({
     message: "Invalid credentials",
   });
 });
-
 const verifyToken = (
   req: Request,
   res: Response,
@@ -76,7 +67,6 @@ const verifyToken = (
     });
   }
 };
-
 app.get("/", (_req: Request, res: Response) => {
   res.send("Backend is working!");
 });
@@ -86,7 +76,6 @@ app.get("/private", verifyToken, (_req: Request, res: Response) => {
     message: "Acceso permitido",
   });
 });
-
 app.get("/tasks", async (_req: Request, res: Response) => {
   try {
     const tasks = await prisma.task.findMany({
