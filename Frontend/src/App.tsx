@@ -22,7 +22,8 @@ function App() {
   const [taskToDelete, setTaskToDelete] = useState<number | null>(null);
   const [deletedCount, setDeletedCount] = useState(0);
 
-  const API_URL = "http://localhost:3000/tasks";
+  const API_URL = import.meta.env.VITE_API_URL ;
+  
 
   const showAlert = (message: string, type: AlertType = "info") => {
     setAlertMessage(message);

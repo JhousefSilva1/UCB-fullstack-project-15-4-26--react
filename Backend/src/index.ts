@@ -8,16 +8,12 @@ import "dotenv/config";
 const SECRET_KEY = process.env.JWT_SECRET || "mi_clave_secreta";
 const app = express();
 const PORT = 3000;
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL!,
-});
 
+// Inicializar Prisma Client con el adaptador personalizado
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  })
-);
+
+app.use(cors());
 app.use(express.json());
 app.post("/login", (req: Request, res: Response) => {
   const { username, password } = req.body;
